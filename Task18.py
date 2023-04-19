@@ -12,10 +12,12 @@ list = []
 for i in str:
     list.append(int(i))
 x = int(input('Введите число x, c которым нужно сравнить элементы в списке: '))
-dif_min = x
+dif_min = abs(x - list[0])
+close_element = list[0]
 for item in range(n):
     if list[item] == x:
         break
-    if x-list[item] < dif_min:
-        dif_min = list[item]
-print(f'Самый близкий по величине элемент {list[item]}')
+    if abs(x - list[item]) < dif_min:
+        dif_min = abs(x - list[item])
+        close_element = list[item]
+print(f'Самый близкий по величине элемент {close_element}')
